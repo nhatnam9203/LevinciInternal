@@ -16,6 +16,11 @@ import Account from './account.png';
 import AccountInActive from './account-inactive.png';
 import Salary from './salary.png';
 import SalaryInActive from './salary-inactive.png';
+import UnAssigned from './unassigned.png'
+import Priority from './priority.png'
+import DueDate from './duedate.png'
+import Estimate from './estimate.png'
+import Attachment from './attachment.png'
 
 module.exports = {
 	BackgroundAuth,
@@ -35,5 +40,10 @@ module.exports = {
 	Account,
 	AccountInActive,
 	Salary,
-	SalaryInActive
+	SalaryInActive,
+	UnAssigned,
+	DueDate,
+	Priority,
+	Estimate,
+	Attachment
 };

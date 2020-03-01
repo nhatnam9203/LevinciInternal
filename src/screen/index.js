@@ -5,6 +5,7 @@ import Splash from './Splash';
 import Home from './Home'
 import Setting from './Setting'
 import Task from './Task'
+import TaskAdd from './TaskAdd'
 
 module.exports = {
 	Auth,
@@ -13,5 +14,6 @@ module.exports = {
     Splash,
 	Home,
 	Setting,
-	Task
+	Task,
+	TaskAdd
 };
