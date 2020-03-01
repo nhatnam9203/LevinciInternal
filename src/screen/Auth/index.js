@@ -1,48 +1,9 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, Image } from 'react-native';
+import { View, StyleSheet, Image } from 'react-native';
 import styled from 'styled-components/native';
-import { scaleWidth } from '../../utils';
+import { scaleWidth } from '@utils';
 import { TouchableRipple } from 'react-native-paper';
-import images from '../../assets/images';
-
-const Container = styled.ImageBackground`
-	flex: 1;
-	backgroundColor: rgba(0, 0, 0, 0.5);
-`;
-
-const Title = styled.Text`
-	color: #ffffff;
-	fontSize: ${scaleWidth(7)};
-	fontWeight: bold;
-`;
-
-const Title2 = styled(Title)`
-    fontSize: ${scaleWidth(12)};
-`;
-
-const Paragraph = styled.Text`
-	fontSize: ${scaleWidth(3)};
-	marginTop: ${scaleWidth(8)};
-	marginBottom: ${scaleWidth(8)};
-	color: #ffffff;
-	fontSize: ${scaleWidth(3)};
-`;
-
-const Note = styled(Paragraph)`
-    width: ${scaleWidth(45)};
-    textAlign: center;
-`;
-
-const TxtButton = styled.Text`
-	color: #ffffff;
-	fontSize: ${scaleWidth(4.3)};
-	fontWeight: bold;
-	letterSpacing: 0.6;
-`;
-
-const TxtButton2 = styled(TxtButton)`
-    color: #EBB028;
-`;
+import images from '@assets/images';
 
 export default class Auth extends Component {
 	navigateToHome = () => {
@@ -103,3 +64,42 @@ const styles = StyleSheet.create({
 		marginTop: scaleWidth(3)
 	}
 });
+
+const Container = styled.ImageBackground`
+	flex: 1;
+	backgroundColor: rgba(0, 0, 0, 0.5);
+`;
+
+const Title = styled.Text`
+	color: #ffffff;
+	fontSize: ${scaleWidth(7)};
+	fontWeight: bold;
+`;
+
+const Title2 = styled(Title)`
+    fontSize: ${scaleWidth(12)};
+`;
+
+const Paragraph = styled.Text`
+	fontSize: ${scaleWidth(3)};
+	marginTop: ${scaleWidth(8)};
+	marginBottom: ${scaleWidth(8)};
+	color: #ffffff;
+	fontSize: ${scaleWidth(3)};
+`;
+
+const Note = styled(Paragraph)`
+    width: ${scaleWidth(45)};
+    textAlign: center;
+`;
+
+const TxtButton = styled.Text`
+	color: #ffffff;
+	fontSize: ${scaleWidth(4.3)};
+	fontWeight: bold;
+	letterSpacing: 0.6;
+`;
+
+const TxtButton2 = styled(TxtButton)`
+    color: #EBB028;
+`;

@@ -34,6 +34,9 @@ const API = {
     BASE_API: "https://facebook.github.io/react-native/",
 }
 
+export const _codePushKeyIOS = 'XXQ_Edcd1Latusk-Xc5bTBYB4cqxPi4iyr4Pd';
+export const _codePushKeyAndroid = 'm2ainoPjwz4KbMKOvu9yVfxVVXkwd61J164d5';
+
 export const PromiseAction = async (action, data) => {
 	return await new Promise((resolve, rejects) => {
 		action({ data, resolve, rejects });
@@ -112,11 +115,6 @@ export function api(path, params, method, token) {
 		});
 }
 
-export const getPosotion = (options = {}) => {
-	return new Promise((resolve, reject) => {
-		navigator.geolocation.getCurrentPosition(resolve, reject, options);
-	});
-};
 
 export const isIphoneX = () => {
 	const { height, width } = Dimensions.get('window');
@@ -126,27 +124,6 @@ export const isIphoneX = () => {
 export const validYear = (year) => {
 	let rex = /^[12][0-9]{3}$/;
 	return rex.test(year);
-};
-
-export const openBrowser = (urlSocial) => {
-	Linking.canOpenURL(urlSocial)
-		.then((supported) => {
-			if (!supported) {
-			} else {
-				return Linking.openURL(urlSocial);
-			}
-		})
-		.catch((err) => console.error('An error occurred', err));
-};
-
-export const validateIsNumber = (number) => {
-	var n = Number(number);
-	return !(n !== n);
-};
-
-export const validatePassword = (password) => {
-	var re = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,64}$/;
-	return re.test(String(password));
 };
 
 export const validateEmail = (email) => {

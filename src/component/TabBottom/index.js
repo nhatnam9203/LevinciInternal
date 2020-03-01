@@ -111,6 +111,7 @@ class TabBottom extends Component {
 						this.setCurrentItems(icon);
 						this.toggleOpenUp();
 					}}
+					disabled={index == 6}
 				>
 					<IconOpenup source={activeItem === icon.name ? icon.Icon : icon.IconInActive} />
 					<TextOpenUp Color={activeItem === icon.name ? GlobalStyle.YELLOW : GlobalStyle.WHITE}>
