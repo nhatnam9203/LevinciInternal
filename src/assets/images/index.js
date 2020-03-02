@@ -21,6 +21,9 @@ import Priority from './priority.png'
 import DueDate from './duedate.png'
 import Estimate from './estimate.png'
 import Attachment from './attachment.png'
+import File from './file.png'
+import Media from './media.png'
+import Camera from './camera.png'
 
 module.exports = {
 	BackgroundAuth,
@@ -45,5 +48,7 @@ module.exports = {
 	DueDate,
 	Priority,
 	Estimate,
-	Attachment
+	Attachment,
+	File,
+	Camera,Media
 };
