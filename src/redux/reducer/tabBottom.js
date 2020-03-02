@@ -1,36 +1,84 @@
 import createReducer from '../createReducer';
 import images from '@assets/images';
 import NavigationServices from '@navigator/NavigationServices';
+import { Animated } from 'react-native';
+import { scaleHeight } from '@utils';
 
 const initialState = {
-	data : [
+	isOpenBottom: false,
+	height: new Animated.Value(scaleHeight(10)),
+	activeItem: 'Work',
+	currentIcons: [
 		{
-			key: 0,
-			name: 'Calendar',
-			Icon: images.Calendar,
-			IconInActive: images.CalendarInActive,
-			navigate: () => NavigationServices.navigate('Calendar')
+			name: 'Task33',
+			Icon: images.Task,
+			IconInActive: images.TaskInActive,
+			navigate: () => NavigationServices.navigate('Task')
 		},
 		{
-			key: 1,
 			name: 'Work',
 			Icon: images.Work,
 			IconInActive: images.WorkInActive,
 			navigate: () => NavigationServices.navigate('Work')
 		},
 		{
-			key: 2,
 			name: 'Mail',
 			Icon: images.Mail,
 			IconInActive: images.MailInActive,
 			navigate: () => NavigationServices.navigate('Mail')
 		}
 	],
+	indexActive: 1
 };
 
 const tabBottom = createReducer(initialState, {
-	['SEARCH_PHONE_OFFLINE'](state, action) {
-		return { ...state, customerOffline: action.payload };
+	['TOGGLE_BOTTOM'](state, action) {
+		return { ...state, isOpenBottom: !state.isOpenBottom };
+	},
+	['SET_ACTIVE_INDEX'](state, action) {
+		const { index } = action;
+		return { ...state, indexActive: index };
+	},
+	['SET_ACTIVE_ITEM'](state, action) {
+		const { item } = action;
+		return { ...state, activeItem: item.name };
+	},
+	['SET_CURRENT_ICONS'](state, action) {
+		const { item } = action;
+		let { currentIcons, indexActive } = state;
+		const _pos = currentIcons.findIndex((obj) => obj.name === item.name);
+		if (_pos !== -1) return { ...state };
+		currentIcons[indexActive] = item;
+		return { ...state, currentIcons };
+	},
+	['RESET_TAB_BOTTOM'](state, action) {
+		return {
+			...state,
+			isOpenBottom: false,
+			height: new Animated.Value(scaleHeight(10)),
+			activeItem: 'Work',
+			currentIcons: [
+				{
+					name: 'Task',
+					Icon: images.Task,
+					IconInActive: images.TaskInActive,
+					navigate: () => NavigationServices.navigate('Task')
+				},
+				{
+					name: 'Work',
+					Icon: images.Work,
+					IconInActive: images.WorkInActive,
+					navigate: () => NavigationServices.navigate('Work')
+				},
+				{
+					name: 'Mail',
+					Icon: images.Mail,
+					IconInActive: images.MailInActive,
+					navigate: () => NavigationServices.navigate('Mail')
+				}
+			],
+			indexActive: 1
+		};
 	}
 });
 export default tabBottom;

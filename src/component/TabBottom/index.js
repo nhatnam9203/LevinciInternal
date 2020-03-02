@@ -1,39 +1,13 @@
 import React, { Component } from 'react';
-import { Text, View, TouchableOpacity, StyleSheet, Animated } from 'react-native';
+import { StyleSheet, Animated } from 'react-native';
 import { GlobalStyle } from '@utils/styles';
 import { scaleWidth, scaleHeight, slop } from '@utils';
 import styled from 'styled-components/native';
-import images from '@assets/images';
 import FontAweSome from 'react-native-vector-icons/FontAwesome';
 import { iconList } from './IconList';
 import ConnectRedux from '@reduxApp/ConnectRedux';
-import NavigationServices from '@navigator/NavigationServices';
 
 const initialState = {
-	isOpenUp: false,
-	height: new Animated.Value(scaleHeight(10)),
-	activeItem: 'Work',
-	currentIcons: [
-		{
-			name: 'Task',
-			Icon: images.Task,
-			IconInActive: images.TaskInActive,
-			navigate: () => NavigationServices.navigate('Task')
-		},
-		{
-			name: 'Work',
-			Icon: images.Work,
-			IconInActive: images.WorkInActive,
-			navigate: () => NavigationServices.navigate('Work')
-		},
-		{
-			name: 'Mail',
-			Icon: images.Mail,
-			IconInActive: images.MailInActive,
-			navigate: () => NavigationServices.navigate('Mail')
-		}
-	],
-	indexActive: 1
 };
 
 class TabBottom extends Component {
@@ -51,22 +25,19 @@ class TabBottom extends Component {
 	};
 
 	toggleOpenUp = () => {
-		const { isOpenUp } = this.state;
 		this.checkOpenBottom();
-		this.setState({
-			isOpenUp: !isOpenUp
-		});
+		this.props.actions.app.toggleBottom();
 	};
 
 	checkOpenBottom = () => {
-		const { isOpenUp } = this.state;
-		if (!isOpenUp) {
-			Animated.timing(this.state.height, {
+		const { isOpenBottom,height } = this.props;
+		if (!isOpenBottom) {
+			Animated.timing(height, {
 				toValue: scaleHeight(32),
 				duration: 200
 			}).start();
 		} else {
-			Animated.timing(this.state.height, {
+			Animated.timing(height, {
 				toValue: scaleHeight(10),
 				duration: 200
 			}).start();
@@ -79,35 +50,25 @@ class TabBottom extends Component {
 
 	closePopup = () => {
 		this.checkOpenBottom();
-		this.setState({ isOpenUp: false });
+		this.props.actions.app.toggleBottom();
 	};
 
-	componentWillUnmount() {
-		this.resetState();
-		this.closePopup();
-	}
-
 	setActiveIndex = (index) => {
-		this.setState({ indexActive: index });
+		this.props.actions.app.setActiveIndex(index);
 	};
 
 	setActiveItem = (item) => {
-		this.setState({
-			activeItem: item.name
-		});
+		this.props.actions.app.setActiveItem(item);
 		item.navigate();
 	};
 
 	setCurrentItems = (item) => {
-		let { currentIcons, indexActive } = this.state;
-		const _pos = currentIcons.findIndex((obj) => obj.name === item.name);
-		if (_pos !== -1) return;
-		currentIcons[indexActive] = item;
-		this.setState({ currentIcons });
+
+		this.props.actions.app.setCurrentItems(item);
 	};
 
 	renderItemOpenUp() {
-		const { activeItem } = this.state;
+		const { activeItem } = this.props;
 		return iconList.map((icon, index) => {
 			return (
 				<Item
@@ -129,7 +90,7 @@ class TabBottom extends Component {
 	}
 
 	renderItemOpenDown() {
-		const { currentIcons, activeItem } = this.state;
+		const { currentIcons, activeItem } = this.props;
 		return currentIcons.map((icon, index) => {
 			return (
 				<Item
@@ -146,23 +107,26 @@ class TabBottom extends Component {
 	}
 
 	render() {
-		const { isOpenUp } = this.state;
-
+		const { isOpenBottom,height } = this.props;
 		return (
 			<Animated.View
 				style={[
 					styles.container,
 					{
-						height: this.state.height,
-						paddingTop: isOpenUp ? scaleHeight(3) : 5
+						height: height,
+						paddingTop: isOpenBottom ? scaleHeight(3) : 5
 					}
 				]}
 			>
-				{!isOpenUp && this.renderItemOpenDown()}
-				{isOpenUp && this.renderItemOpenUp()}
+				{!isOpenBottom && this.renderItemOpenDown()}
+				{isOpenBottom && this.renderItemOpenUp()}
 
 				<TouchArrow hitSlop={slop} onPress={this.toggleOpenUp}>
-					<FontAweSome name={isOpenUp ? 'caret-down' : 'caret-up'} color={'white'} size={scaleWidth(5.5)} />
+					<FontAweSome
+						name={isOpenBottom ? 'caret-down' : 'caret-up'}
+						color={'white'}
+						size={scaleWidth(5.5)}
+					/>
 				</TouchArrow>
 			</Animated.View>
 		);
@@ -187,8 +151,6 @@ const TextOpenUp = styled.Text`
 	marginTop: ${scaleWidth(1)};
 	font-weight: 600;
 `;
-
-const Row = styled.View`flex-direction: row;`;
 
 const TouchArrow = styled(Item)`
     width: ${scaleWidth(9)};
@@ -227,8 +189,11 @@ const styles = StyleSheet.create({
 });
 
 const mapStateToProps = (state) => ({
-	tabBottoms: state.tabBottom.data,
-	test: state.tabBottom.test
+	isOpenBottom: state.tabBottom.isOpenBottom,
+	activeItem : state.tabBottom.activeItem,
+	height : state.tabBottom.height,
+	indexActive : state.tabBottom.indexActive,
+	currentIcons : state.tabBottom.currentIcons
 });
 
 export default ConnectRedux(mapStateToProps, TabBottom);

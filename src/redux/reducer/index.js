@@ -9,12 +9,13 @@ import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
 const rootConfigPersist = {
     key: 'root',
     storage: AsyncStorage,
-    // whiteList: ['dataLocal,app'],
-    // stateReconciler: autoMergeLevel2,
+    blackList: ['app'],
+    stateReconciler: autoMergeLevel2,
 }
 const rootReducer = combineReducers({
     app,
     dataLocal,
     tabBottom
 })
-export default persistReducer(rootConfigPersist, rootReducer)
+// export default persistReducer(rootConfigPersist, rootReducer)
+export default rootReducer;

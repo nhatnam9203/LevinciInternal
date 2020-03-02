@@ -32,7 +32,7 @@ export default class Auth extends Component {
 					/>
 					<Title>YOU CAN DO IT.</Title>
 					<Title2>WE CAN HELP</Title2>
-					<Paragraph>Inspired from LeonardoLeonardo da Vinci</Paragraph>
+					<Paragraph>Inspired from Leonardo da Vinci</Paragraph>
 					<TouchableRipple onPress={this.navigateToSignIn} style={styles.button}>
 						<TxtButton>LOGIN</TxtButton>
 					</TouchableRipple>
