@@ -10,7 +10,7 @@ const initialState = {
 	activeItem: 'Work',
 	currentIcons: [
 		{
-			name: 'Task33',
+			name: 'Task',
 			Icon: images.Task,
 			IconInActive: images.TaskInActive,
 			navigate: () => NavigationServices.navigate('Task')
@@ -47,7 +47,7 @@ const tabBottom = createReducer(initialState, {
 		const { item } = action;
 		let { currentIcons, indexActive } = state;
 		const _pos = currentIcons.findIndex((obj) => obj.name === item.name);
-		if (_pos !== -1) return { ...state };
+		if (_pos !== -1) return { ...state,indexActive : _pos };
 		currentIcons[indexActive] = item;
 		return { ...state, currentIcons };
 	},

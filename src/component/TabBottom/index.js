@@ -63,7 +63,6 @@ class TabBottom extends Component {
 	};
 
 	setCurrentItems = (item) => {
-
 		this.props.actions.app.setCurrentItems(item);
 	};
 
