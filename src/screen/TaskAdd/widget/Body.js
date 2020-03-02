@@ -9,6 +9,7 @@ import {
 	PopupAssigned,
 	PopupAttachment,
 	PopupEstimate,
+	PopupDueDate,
 	TaskTitle,
 	Item
 } from './component';
@@ -21,12 +22,14 @@ export default class Body extends PureComponent {
 			isPopupPriority: false,
 			isPopupAssign: false,
 			isPopupAttachment: false,
-			isPopupEstimate: false
+			isPopupEstimate: false,
+			isPopupDueDate: false
 		};
 		this.Priority = React.createRef();
 		this.Assign = React.createRef();
 		this.Attachment = React.createRef();
 		this.Estimate = React.createRef();
+		this.DueDate = React.createRef();
 	}
 
 	openModalPriority = () => {
@@ -63,8 +66,16 @@ export default class Body extends PureComponent {
 		this.setState({ isPopupEstimate: false });
 	};
 
+	openModalDueDate = () => {
+		this.setState({ isPopupDueDate: true });
+	};
+
+	closeModalDueDate = () => {
+		this.setState({ isPopupDueDate: false });
+	};
+
 	render() {
-		const { isPopupPriority, isPopupAssign, isPopupAttachment, isPopupEstimate } = this.state;
+		const { isPopupPriority, isPopupAssign, isPopupAttachment, isPopupEstimate, isPopupDueDate } = this.state;
 		return (
 			<Container>
 				<ScrollView showsVerticalScrollIndicator={false}>
@@ -76,7 +87,7 @@ export default class Body extends PureComponent {
 					<Description />
 
 					<Item content="Priority" onPress={this.openModalPriority} icon={images.Priority} />
-					<Item content="Due date..." icon={images.DueDate} />
+					<Item content="Due date..." onPress={this.openModalDueDate} icon={images.DueDate} />
 					<Item content="Estimate" onPress={this.openModalEstimate} icon={images.Estimate} />
 					<Item content="Unassigned" onPress={this.openModalAssign} icon={images.UnAssigned} />
 					<Item content="Attachment" onPress={this.openModalAttachment} icon={images.Attachment} />
@@ -91,6 +102,7 @@ export default class Body extends PureComponent {
 					isVisible={isPopupAttachment}
 				/>
 				<PopupEstimate ref={this.Estimate} onPressDone={this.closeModalEstimate} isVisible={isPopupEstimate} />
+				<PopupDueDate ref={this.DueDate} onPressDone={this.closeModalDueDate} isVisible={isPopupDueDate} />
 			</Container>
 		);
 	}

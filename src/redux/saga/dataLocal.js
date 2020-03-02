@@ -7,13 +7,11 @@ function* getMovie(action) {
     })
     try {
         const responses = yield requestAPI(action);
-        console.log(responses.movies)
         yield put({
             type: 'SET_MOVIE',
             movie: responses.movies
         })
     } catch (error) {
-        console.log(error)
     } finally {
         yield put({
             type: 'STOP_LOADING_ROOT',
