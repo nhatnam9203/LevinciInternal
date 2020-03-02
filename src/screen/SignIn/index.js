@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, Image,StatusBar } from 'react-native';
+import { Text, View, StyleSheet, Image, StatusBar } from 'react-native';
 import styled from 'styled-components/native';
 import { scaleWidth, scaleHeight } from '@utils';
 import images from '@assets/images';
@@ -7,7 +7,7 @@ import Input from './widget/Input';
 import ButtonSignIn from './widget/buttonSignIn';
 import ButtonBack from './widget/buttonBack';
 
-export default class Auth extends Component {
+export default class SignIn extends Component {
 	navigateToHome = () => {
 		this.props.navigation.navigate('Home');
 	};
@@ -22,39 +22,41 @@ export default class Auth extends Component {
 
 	back = () => {
 		this.props.navigation.goBack();
-    };
-    
-    navigateToHome=()=>{
-        this.props.navigation.navigate('Home');
-    }
+	};
+
+	navigateToHome = () => {
+		this.props.navigation.navigate('Home');
+	};
 
 	render() {
 		return (
 			<React.Fragment>
 				<StatusBar hidden={true} />
 				<Container source={images.BackgroundAuth}>
-				<ButtonBack onPress={this.back} />
-				<View style={{ flex: 8, alignItems: 'center', paddingTop: scaleHeight(2) }}>
-					<Image
-						source={images.LogoLevinci}
-						resizeMode="contain"
-						style={{
-							tintColor: 'white',
-							width: scaleWidth(48)
-						}}
-					/>
-					<Title>YOU CAN DO IT.</Title>
-					<Title2>WE CAN HELP</Title2>
-					<Paragraph>Inspired from Leonardo da Vinci</Paragraph>
-					<Input placeHolder="Your domain" />
-					<Input placeHolder="Email address" />
-					<Input placeHolder="Password" />
-					<ButtonSignIn onPress={this.navigateToHome} />
-				</View>
-				<View style={{ flex: 2, justifyContent: 'center', alignItems: 'center' }}>
-					<Note>By signing up, you are to the User Notice and Privact Policy</Note>
-				</View>
-			</Container>
+
+					<ButtonBack onPress={this.back} />
+					<View style={{ flex: 8, alignItems: 'center', paddingTop: scaleHeight(2) }}>
+						<Image
+							source={images.LogoLevinci}
+							resizeMode="contain"
+							style={{
+								tintColor: 'white',
+								width: scaleWidth(48)
+							}}
+						/>
+						<Title>YOU CAN DO IT.</Title>
+						<Title2>WE CAN HELP</Title2>
+						<Paragraph>Inspired from Leonardo da Vinci</Paragraph>
+						<Input placeHolder="Your domain" />
+						<Input placeHolder="Email address" />
+						<Input placeHolder="Password" />
+						<ButtonSignIn onPress={this.navigateToHome} />
+					</View>
+
+					<View style={{ flex: 2, justifyContent: 'center', alignItems: 'center' }}>
+						<Note>By signing up, you are to the User Notice and Privact Policy</Note>
+					</View>
+				</Container>
 			</React.Fragment>
 		);
 	}

@@ -18,6 +18,7 @@ export default class SignUp extends Component {
 	render() {
 		return (
 			<Container>
+
 				<Header>
 					<Entypo name="star-outlined" color={'white'} size={scaleWidth(5)} />
 					<Row>
@@ -26,6 +27,7 @@ export default class SignUp extends Component {
 					</Row>
 					<AntDesign name="reload1" color={'white'} size={scaleWidth(5)} />
 				</Header>
+
 				<Body>
 					<LogoLevinci source={images.LogoLevinci} resizeMode="contain" />
 					<Title>Sign up for your account</Title>
@@ -38,6 +40,7 @@ export default class SignUp extends Component {
 					<ButtonSignUp onPress={this.navigateToHome} />
 					<ButtonBack onPress={this.back} />
 				</Body>
+				
 			</Container>
 		);
 	}

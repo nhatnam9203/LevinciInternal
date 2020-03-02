@@ -3,7 +3,7 @@
 export const GlobalStyle = {
     WHITE : '#ffffff',
     BLACK : '#2B2E33',
-    YELLOW : '#DCA626',
+    YELLOW : '#ffcb42',
     GREY : '#BBBBBB',
     GREEN : '#63FD30',
     RED : '#FC0D1B',

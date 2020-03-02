@@ -77,8 +77,14 @@ class TabBottom extends Component {
 		this.setState(initialState);
 	};
 
+	closePopup = () => {
+		this.checkOpenBottom();
+		this.setState({ isOpenUp: false });
+	};
+
 	componentWillUnmount() {
 		this.resetState();
+		this.closePopup();
 	}
 
 	setActiveIndex = (index) => {
@@ -148,7 +154,7 @@ class TabBottom extends Component {
 					styles.container,
 					{
 						height: this.state.height,
-						paddingTop: isOpenUp ? scaleWidth(2) : 0
+						paddingTop: isOpenUp ? scaleHeight(3) : 5
 					}
 				]}
 			>
@@ -191,7 +197,7 @@ const TouchArrow = styled(Item)`
     position: absolute;
     top: -${scaleWidth(4)};
     left: ${scaleWidth(45.5)};
-    background-color: ${GlobalStyle.YELLOW};
+    background-color: #E9AF28;
     zIndex: 999;
 `;
 
