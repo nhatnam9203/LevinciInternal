@@ -1,8 +1,8 @@
 import { createStackNavigator } from 'react-navigation-stack';
-import { TaskAdd } from '../screen';
+import { TaskAdd,Account } from '../screen';
 export default createStackNavigator(
 	{
-		TaskAdd
+		TaskAdd,
 	},
 	{
 		initialRouteName: 'TaskAdd',
