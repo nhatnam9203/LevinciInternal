@@ -16,14 +16,17 @@ import Account from './account.png';
 import AccountInActive from './account-inactive.png';
 import Salary from './salary.png';
 import SalaryInActive from './salary-inactive.png';
-import UnAssigned from './unassigned.png'
-import Priority from './priority.png'
-import DueDate from './duedate.png'
-import Estimate from './estimate.png'
-import Attachment from './attachment.png'
-import File from './file.png'
-import Media from './media.png'
-import Camera from './camera.png'
+import UnAssigned from './unassigned.png';
+import Priority from './priority.png';
+import DueDate from './duedate.png';
+import Estimate from './estimate.png';
+import Attachment from './attachment.png';
+import File from './file.png';
+import Media from './media.png';
+import Camera from './camera.png';
+import TreeDot from './treedot.png';
+import TrashAll from './trashall.png';
+import DefaultAvatar from './default-avatar.png';
 
 module.exports = {
 	BackgroundAuth,
@@ -50,5 +53,9 @@ module.exports = {
 	Estimate,
 	Attachment,
 	File,
-	Camera,Media
+	Camera,
+	Media,
+	TreeDot,
+	TrashAll,
+	DefaultAvatar
 };

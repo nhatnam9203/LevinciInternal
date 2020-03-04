@@ -1,6 +1,5 @@
-
 import { createMaterialTopTabNavigator } from 'react-navigation-tabs';
-import { Setting, Task,Account,Work } from '../screen';
+import { Setting, Task, Account, Work, Mail, ProjectDetail } from '../screen';
 import TabBottom from '../component/TabBottom';
 
 const Tab = createMaterialTopTabNavigator(
@@ -8,12 +7,14 @@ const Tab = createMaterialTopTabNavigator(
 		Work,
 		Setting,
 		Task,
-		Account
+		Account,
+		Mail,
+		ProjectDetail
 	},
 	{
 		tabBarPosition: 'bottom',
 		tabBarComponent: TabBottom,
-		initialRouteName : 'Work'
+		initialRouteName: 'Work'
 	}
 );
 export default Tab;
