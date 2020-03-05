@@ -8,28 +8,35 @@ export default class UpComingTask extends Component {
 	render() {
 		return (
 			<Container>
+				<Title>Current tasks</Title>
+				<TaskItem
+					name="HarmonyPay"
+					LogoText={'HP'}
+					colorLogoTask={'#F28A77'}
+					contentTask={'HCA - Coding'}
+				/>
+
 				<Title>Upcoming tasks</Title>
-				<Scroll showsVerticalScrollIndicator={false}>
-					<TaskItem
-						name="HarmonyPay"
-						LogoText={'HP'}
-						colorLogoTask={'#F28A77'}
-						contentTask={'HCA- Design payment'}
-					/>
-                    <TaskItem
-						name="HarmonyPay"
-						LogoText={'HP'}
-						colorLogoTask={'#F28A77'}
-						contentTask={'HCA- Design payment'}
-					/>
-                    <TaskItem
-						name="HarmonyPay"
-						LogoText={'HP'}
-						colorLogoTask={'#F28A77'}
-						contentTask={'HCA- Design payment'}
-					/>
-                    <View height={scaleHeight(20)} />
-				</Scroll>
+				<TaskItem
+					name="Popeyes"
+					LogoText={'PE'}
+					colorLogoTask={'#22C7FC'}
+					contentTask={'HCA - Task 201'}
+				/>
+				<TaskItem
+					name="HarmonyPay"
+					LogoText={'HP'}
+					colorLogoTask={'#F28A77'}
+					contentTask={'HCA - Task 01'}
+				/>
+				<Title>Completed tasks</Title>
+				<TaskItem
+					name="HarmonyPay"
+					LogoText={'HP'}
+					colorLogoTask={'#F28A77'}
+					contentTask={'HCA - Task 1000000'}
+				/>
+
 			</Container>
 		);
 	}
@@ -45,6 +52,7 @@ const Title = styled.Text`
 	fontWeight: 600;
 	fontSize: ${scaleWidth(4)};
 	marginLeft: ${scaleWidth(3)};
+	margin-top: ${scaleWidth(5)};
 `;
 
 const Scroll = styled.ScrollView``;

@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet } from 'react-native';
-import { scaleWidth, scaleHeight } from '@utils';
+import { View, StyleSheet, Text } from 'react-native';
+import { scaleWidth } from '@utils';
 import styled from 'styled-components/native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
-import { GlobalStyle } from '../../../utils/styles';
+import { GlobalStyle } from '@utils/styles';
+import { white } from '../../../../node_modules/colorette';
 
 export default class TaskItem extends Component {
 	render() {
@@ -22,9 +23,15 @@ export default class TaskItem extends Component {
 					<TaskContent>
 						<TaskContent.Title>{contentTask}</TaskContent.Title>
 						<TaskContent.Time>
-							<TextTime>00</TextTime>
-							<TextTime>00</TextTime>
-							<TextTime>00</TextTime>
+							<TextTime>
+								00 <Text style={styles.txtTime}>d</Text>
+							</TextTime>
+							<TextTime>
+								00 <Text style={styles.txtTime}>h</Text>
+							</TextTime>
+							<TextTime>
+								00 <Text style={styles.txtTime}>m</Text>
+							</TextTime>
 						</TaskContent.Time>
 					</TaskContent>
 					<TouchIcon>
@@ -51,6 +58,11 @@ const styles = StyleSheet.create({
 		backgroundColor: GlobalStyle.BLACK,
 		width: scaleWidth(94),
 		marginLeft: scaleWidth(3)
+	},
+	txtTime : {
+		fontWeight : '400',
+		color : 'white',
+		fontSize : scaleWidth(3)
 	}
 });
 
@@ -114,7 +126,7 @@ const TextTime = styled.Text`
 	color: white;
 	width: ${scaleWidth(18)};
 	font-weight: 600;
-	font-size: ${scaleWidth(4)};
+	font-size: ${scaleWidth(4.5)};
 `;
 
 const TouchIcon = styled.TouchableOpacity`

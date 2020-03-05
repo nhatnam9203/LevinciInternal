@@ -5954,10 +5954,10 @@ react-lifecycles-compat@^3.0.4:
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
-react-native-calendars@^1.263.0:
-  version "1.263.0"
-  resolved "https://registry.yarnpkg.com/react-native-calendars/-/react-native-calendars-1.263.0.tgz#49048d50b9b55c6dc0900f8584f8485b3093a562"
-  integrity sha512-Xi1b/B/yKd7vnfREMCmN/MAaDD7uKmYxiwm4spFB/gbJv6naHc0vXX5Fxqr00jifzKoc9C6/LYE9YYaWnIL97A==
+react-native-calendars@^1.192.0:
+  version "1.264.0"
+  resolved "https://registry.yarnpkg.com/react-native-calendars/-/react-native-calendars-1.264.0.tgz#552cfff1480ab6c860f54e12ec2b82f9b514aae6"
+  integrity sha512-NHNekv1iwHMI+evr8dDLFqCdvnCWGlBxPKO0/bw1+HDy4uukuab//akoOx9/GGl/3+XV6MVTLdda+qjT6pD2Bg==
   dependencies:
     hoist-non-react-statics "^3.3.1"
     lodash "^4.0.0"

@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
-import { Text, StyleSheet } from 'react-native';
+import { Text, StyleSheet, TouchableOpacity } from 'react-native';
 import styled from 'styled-components/native';
 import { scaleWidth } from '@utils';
+import NavigationServices from '@navigator/NavigationServices';
 
 export default class Body extends Component {
+	logout = () => {
+		NavigationServices.navigate('Auth');
+	};
+
 	render() {
 		return (
 			<Container>
@@ -22,7 +27,9 @@ export default class Body extends Component {
 				</Item>
 				<Item>
 					<Text style={styles.title}>Account</Text>
-					<Text style={styles.content}>Logout</Text>
+					<TouchableOpacity onPress={this.logout}>
+						<Text style={styles.content}>Logout</Text>
+					</TouchableOpacity>
 				</Item>
 			</Container>
 		);
@@ -50,7 +57,7 @@ const Container = styled.View`
 `;
 
 const Item = styled.View`
-	borderBottomWidth: ${props => props.isBottom ? '1px' : '0px' };
+	borderBottomWidth: ${(props) => (props.isBottom ? '1px' : '0px')};
 	borderBottomColor: grey;
 	paddingBottom: ${scaleWidth(6)};
 `;

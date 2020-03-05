@@ -19,7 +19,7 @@ export default class Clock extends Component {
 
 const Container = styled.View`
 	width: ${scaleWidth(100)};
-	height: ${scaleHeight(50)};
+	height: ${scaleHeight(40)};
 	backgroundColor: #2b2e33;
 	justify-content: center;
 	align-items: center;
