@@ -107,6 +107,7 @@ class TabBottom extends Component {
 
 	render() {
 		const { isOpenBottom,height } = this.props;
+		console.log(this.props.navigation)
 		return (
 			<Animated.View
 				style={[

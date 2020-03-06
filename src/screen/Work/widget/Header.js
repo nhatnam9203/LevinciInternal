@@ -4,19 +4,26 @@ import styled from 'styled-components/native';
 import moment from 'moment';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import IonicIcon from 'react-native-vector-icons/Ionicons';
-import AntDesgin from 'react-native-vector-icons/AntDesign';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 import { scaleWidth, scaleHeight } from '@utils';
-import NavigationServices from '@navigator/NavigationServices';
 import { Calendar } from 'react-native-calendars';
 import { GlobalStyle } from '@utils/styles';
+import { iconList } from '@component/TabBottom/IconList';
 
 export default class Header extends Component {
 	navigateToSetting = () => {
-		NavigationServices.navigate('Setting');
+		const setting = iconList.find(obj=>obj.name === 'Setting');
+		if(!setting) return;
+		this.props.actions.app.setActiveItem(setting);
+		setting.navigate();
 	};
 
 	selectDay = (date) => {
 		this.props.onChangeSelectCalendar(date);
+	};
+
+	toggleCalendar = () => {
+		this.props.toggleCalendar();
 	};
 
 	renderCalendar() {
@@ -36,17 +43,19 @@ export default class Header extends Component {
 						[selectedDay]: { selected: true }
 					}}
 					theme={theme}
+					renderArrow={(direction) =>
+						direction === 'left' ? (
+							<AntDesign name="caretleft" size={scaleWidth(3)} color={GlobalStyle.YELLOW} />
+						) : (
+							<AntDesign name="caretright" size={scaleWidth(3)} color={GlobalStyle.YELLOW} />
+						)}
 				/>
 			</View>
 		);
 	}
 
-	toggleCalendar = () => {
-		this.props.toggleCalendar();
-	};
-
 	render() {
-		const { isOpenCalendar } = this.props;
+		const { isOpenCalendar, date } = this.props;
 		return (
 			<Container>
 				<TouchIcon>
@@ -54,7 +63,7 @@ export default class Header extends Component {
 				</TouchIcon>
 
 				<Row onPress={this.toggleCalendar}>
-					<Title>{`${moment().format('dddd')} , ${moment().format('DD/MM/YYYY')}`}</Title>
+					<Title>{`${moment(date).format('dddd')} , ${moment(date).format('DD/MM/YYYY')}`}</Title>
 					<IonicIcon
 						style={{
 							marginLeft: 7

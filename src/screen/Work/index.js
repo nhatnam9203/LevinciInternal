@@ -14,15 +14,15 @@ class Home extends Component {
 		};
 	}
 
-	onChangeSelectCalendar = async(date) => {
+	onChangeSelectCalendar = async (date) => {
 		await this.setState({ date: moment(date.dateString) });
 		this.toggleCalendar();
 	};
 
-	toggleCalendar=()=>{
-		const {isOpenCalendar} = this.state;
-		this.setState({isOpenCalendar : !isOpenCalendar})
-	}
+	toggleCalendar = () => {
+		const { isOpenCalendar } = this.state;
+		this.setState({ isOpenCalendar: !isOpenCalendar });
+	};
 
 	render() {
 		const { date, isOpenCalendar } = this.state;
@@ -35,6 +35,7 @@ class Home extends Component {
 						date={date}
 						onChangeSelectCalendar={this.onChangeSelectCalendar}
 						toggleCalendar={this.toggleCalendar}
+						{...this.props}
 					/>
 					<ScrollView showsVerticalScrollIndicator={false}>
 						<Clock />
