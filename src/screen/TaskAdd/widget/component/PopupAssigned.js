@@ -3,33 +3,33 @@ import Modal from '@component/Modal';
 import styled from 'styled-components/native';
 import { scaleWidth, scaleHeight } from '@utils';
 import { GlobalStyle } from '@utils/styles';
-import { View } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
 const peopleList = [
 	{
 		name: 'Chủ Tịch',
 		symbol: 'CT',
-        color: '#33ACE0',
-        email : 'chutich@example.com'
+		color: '#33ACE0',
+		email: 'chutich@example.com'
 	},
 	{
 		name: 'Thư ký',
 		symbol: 'TK',
-        color: '#FC5C1F',
-        email : 'thuky@example.com'
+		color: '#FC5C1F',
+		email: 'thuky@example.com'
 	},
 	{
 		name: 'Giám đốc',
 		symbol: 'GĐ',
-        color: '#FEC52E',
-        email : 'giamdoc@example.com'
+		color: '#FEC52E',
+		email: 'giamdoc@example.com'
 	},
 	{
 		name: 'Kế toán',
 		symbol: 'KT',
-        color: '#FC0D1B',
-        email : 'ketoan@example.com'
+		color: '#FC0D1B',
+		email: 'ketoan@example.com'
 	}
 ];
 
@@ -56,7 +56,7 @@ export default class PopupAssigned extends Component {
 					logoColor={obj.color}
 					logoText={obj.symbol}
 					assignee={assignee}
-                    email={obj.email}
+					email={obj.email}
 				/>
 			);
 		});
@@ -88,32 +88,30 @@ const People = ({ logoText, name, email, logoColor, onPress, assignee }) => {
 			<Logo Color={logoColor}>
 				<Logo.Text>{logoText}</Logo.Text>
 			</Logo>
-			<View
-				style={{
-					justifyContent: 'space-between',
-					marginLeft: scaleWidth(3)
-				}}
-			>
+			<View style={styles.wrap}>
 				<Name>{name}</Name>
 				<Email>{email}</Email>
 			</View>
 
 			{assignee.name === name && (
-				<AntDesign
-					name="check"
-					color={'#5DE92D'}
-					size={scaleWidth(5)}
-					style={{
-						fontWeight: 'bold',
-						position: 'absolute',
-						right: 5,
-						top: scaleWidth(6),
-					}}
-				/>
+				<AntDesign name="check" color={'#5DE92D'} size={scaleWidth(5)} style={styles.check} />
 			)}
 		</WrapPeople>
 	);
 };
+
+const styles = StyleSheet.create({
+	check: {
+		fontWeight: 'bold',
+		position: 'absolute',
+		right: 5,
+		top: scaleWidth(6)
+	},
+	wrap: {
+		justifyContent: 'space-between',
+		marginLeft: scaleWidth(3)
+	}
+});
 
 const WrapPeople = styled.TouchableOpacity`
 	paddingTop: 15px;

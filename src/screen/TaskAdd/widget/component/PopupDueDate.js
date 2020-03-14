@@ -3,7 +3,7 @@ import Modal from '@component/Modal';
 import styled from 'styled-components/native';
 import { scaleWidth, scaleHeight } from '@utils';
 import { GlobalStyle } from '@utils/styles';
-import { View } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
 export default class PopupDueDate extends Component {
@@ -16,14 +16,14 @@ export default class PopupDueDate extends Component {
 						<Title>Due date</Title>
 					</Header>
 					<Body>
-						<View
-							style={{ flexDirection: 'row', marginTop: scaleWidth(4), justifyContent: 'space-between' }}
-						>
+						<View style={styles.row}>
 							<InputTime placeholder="Jan 15" width={scaleWidth(37)} />
 							<InputTime placeholder="9:00 AM" width={scaleWidth(37)} />
 						</View>
+						
 						<Paragraph>Set reminder</Paragraph>
 						<InputTime placeholder="1 day before" width={'100%'} />
+
 						<TouchDone onPress={onPressDone}>
 							<Done>DONE</Done>
 						</TouchDone>
@@ -33,6 +33,19 @@ export default class PopupDueDate extends Component {
 		);
 	}
 }
+
+const styles = StyleSheet.create({
+	row: {
+		flexDirection: 'row',
+		marginTop: scaleWidth(4),
+		justifyContent: 'space-between'
+	},
+	caretdown : {
+		position: 'absolute',
+		right: 0,
+		top: 3
+	}
+});
 
 const InputTime = ({ width, placeholder }) => {
 	return (
@@ -46,11 +59,7 @@ const InputTime = ({ width, placeholder }) => {
 					placeholderTextColor="white"
 				/>
 				<AntDesign
-					style={{
-						position: 'absolute',
-						right: 0,
-						top: 3,
-					}}
+					style={styles.caretdown}
 					name="caretdown"
 					color={'grey'}
 					size={scaleWidth(2.8)}

@@ -12,7 +12,6 @@ export default class PopupAssigned extends Component {
 		};
 	}
 
-
 	renderItems() {
 		const { assignee } = this.state;
 		return (

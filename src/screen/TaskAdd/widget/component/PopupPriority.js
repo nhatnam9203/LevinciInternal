@@ -4,6 +4,7 @@ import styled from 'styled-components/native';
 import { scaleWidth, scaleHeight } from '@utils';
 import { GlobalStyle } from '@utils/styles';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import { StyleSheet } from 'react-native';
 
 const priorities = [
 	{
@@ -45,23 +46,13 @@ export default class PopupPriority extends Component {
 	};
 
 	renderPriorties() {
-        const { priority } = this.state;
+		const { priority } = this.state;
 		return priorities.map((obj, index) => {
 			return (
 				<Priority onPress={() => this.setPriority(obj.name)} Color={obj.color} key={index + 'priority'}>
 					<TextPriority>{obj.name}</TextPriority>
 					{priority === obj.name && (
-						<AntDesign
-							name="check"
-							color={'white'}
-							size={scaleWidth(5)}
-							style={{
-								fontWeight: 'bold',
-								position: 'absolute',
-								right: 5,
-								top: 8
-							}}
-						/>
+						<AntDesign name="check" color={'white'} size={scaleWidth(5)} style={styles.check} />
 					)}
 				</Priority>
 			);
@@ -69,7 +60,7 @@ export default class PopupPriority extends Component {
 	}
 
 	render() {
-        const { isVisible, onPressDone } = this.props;
+		const { isVisible, onPressDone } = this.props;
 		return (
 			<Modal visible={isVisible} onRequestClose={() => {}}>
 				<Container>
@@ -87,6 +78,15 @@ export default class PopupPriority extends Component {
 		);
 	}
 }
+
+const styles = StyleSheet.create({
+	check: {
+		fontWeight: 'bold',
+		position: 'absolute',
+		right: 5,
+		top: 8
+	}
+});
 
 const Container = styled.View`
 	width: ${scaleWidth(94)};
