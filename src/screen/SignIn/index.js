@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Text, View, StyleSheet, Image, StatusBar } from 'react-native';
 import styled from 'styled-components/native';
 import { scaleWidth, scaleHeight } from '@utils';
+import { GlobalStyle } from '@utils/styles';
 import images from '@assets/images';
 import Input from './widget/Input';
 import ButtonSignIn from './widget/buttonSignIn';
@@ -33,9 +34,8 @@ export default class SignIn extends Component {
 			<React.Fragment>
 				<StatusBar hidden={true} />
 				<Container source={images.BackgroundAuth}>
-
 					<ButtonBack onPress={this.back} />
-					<View style={{ flex: 8, alignItems: 'center', paddingTop: scaleHeight(2) }}>
+					<View style={{ flex: 9, alignItems: 'center', paddingTop: scaleHeight(2) }}>
 						<Image
 							source={images.LogoLevinci}
 							resizeMode="contain"
@@ -54,13 +54,24 @@ export default class SignIn extends Component {
 					</View>
 
 					<View style={{ flex: 2, justifyContent: 'center', alignItems: 'center' }}>
-						<Note>By signing up, you are to the User Notice and Privact Policy</Note>
+						<Note>
+							<Text>By signing up, you are to the</Text>
+							<Text style={styles.yellow}> User Notice</Text>
+							<Text> and </Text>
+							<Text style={styles.yellow}>Privact Policy</Text>
+						</Note>
 					</View>
 				</Container>
 			</React.Fragment>
 		);
 	}
 }
+
+const styles = StyleSheet.create({
+	yellow: {
+		color: GlobalStyle.YELLOW
+	}
+});
 
 const Container = styled.ImageBackground`
 	flex: 1;

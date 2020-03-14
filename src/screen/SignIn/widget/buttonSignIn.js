@@ -4,6 +4,7 @@ import { TouchableRipple } from 'react-native-paper';
 import { scaleWidth } from '../../../utils';
 
 export default class buttonSignUp extends Component {
+
 	render() {
 		const { onPress } = this.props;
 		return (
@@ -23,7 +24,7 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		justifyContent: 'center',
 		borderRadius: 30,
-		marginTop: scaleWidth(4)
+		marginTop: scaleWidth(4),
 	},
 	text: {
 		color: 'white',
