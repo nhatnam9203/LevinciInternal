@@ -4,6 +4,7 @@ import { scaleWidth, scaleHeight } from '@utils';
 import { Text } from 'react-native';
 
 export default class header extends PureComponent {
+
 	render() {
 		return (
 			<Header>
@@ -13,11 +14,12 @@ export default class header extends PureComponent {
 						fontSize: scaleWidth(5),
 						fontWeight: '600',
 						letterSpacing: 0.3,
-						textAlign: 'center'
+						textAlign: 'center',
 					}}
 				>
 					Account
 				</Text>
+				<Text></Text>
 			</Header>
 		);
 	}
@@ -30,4 +32,5 @@ const Header = styled.View`
 	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 	zIndex: 9999;
 	backgroundColor: #2b2e33;
+	
 `;

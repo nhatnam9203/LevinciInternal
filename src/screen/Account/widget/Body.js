@@ -20,15 +20,17 @@ export default class Body extends Component {
 							<Logo.Text>NP</Logo.Text>
 						</Logo>
 						<Name>Phan Nhật Nam</Name>
-						<Email>nam.phan@levincigoup.com</Email>
+						<Email>nam.phan @levincigoup.com</Email>
 					</Top>
+
 					<Bottom>
 						<Row>
-							<Profile>Profile</Profile>
+							<Profile> Profile </Profile>
 							<TouchableOpacity>
 								<MaterialIcons name="edit" color={GlobalStyle.YELLOW} size={scaleWidth(5)} />
 							</TouchableOpacity>
 						</Row>
+
 						<InputItem title="Display name" value="Phan Nhật Nam" />
 						<InputItem title="Email address" value="nam.phan@levincigoup.com" />
 						<InputItem title="Department" value="Production" />
@@ -39,10 +41,12 @@ export default class Body extends Component {
 							<Security>Security</Security>
 							<Security.Text>Change password</Security.Text>
 						</ViewPassword>
+
 						<TouchableOpacity onPress={this.logout}>
 							<Text style={styles.logout}>Log out</Text>
 						</TouchableOpacity>
 					</Bottom>
+
 					<View style={{ height: scaleHeight(10) }} />
 				</ScrollView>
 			</Container>
@@ -53,15 +57,7 @@ export default class Body extends Component {
 const InputItem = ({ title = '', value = '' }) => {
 	return (
 		<WrapInput>
-			<Text
-				style={{
-					color: '#ffffff',
-					fontWeight: '500',
-					fontSize: scaleWidth(4)
-				}}
-			>
-				{title}
-			</Text>
+			<Text style={styles.title}>{title}</Text>
 			<Input value={value} />
 		</WrapInput>
 	);
@@ -72,6 +68,11 @@ const styles = StyleSheet.create({
 		color: 'white',
 		fontSize: scaleWidth(4),
 		fontWeight: 'bold'
+	},
+	title: {
+		color: '#ffffff',
+		fontWeight: '500',
+		fontSize: scaleWidth(4)
 	}
 });
 
@@ -79,11 +80,11 @@ const Container = styled.View`flex: 1;`;
 
 const Top = styled.View`
 	width: ${scaleWidth(100)};
-	height: ${scaleHeight(35)};
-	align-items: center;
-	padding: 15px;
-	borderBottomWidth: 0.5px;
-	borderBottomColor: grey;
+	/* height: ${scaleHeight(35)}; */
+    align-items: center;
+    padding: 15px;
+    borderBottomWidth: 0.5px;
+    borderBottomColor: grey;
 `;
 
 const Bottom = styled.View`
@@ -92,8 +93,8 @@ const Bottom = styled.View`
 `;
 
 const Logo = styled.View`
-	width: ${scaleWidth(40)};
-	height: ${scaleWidth(40)};
+	width: ${scaleWidth(35)};
+	height: ${scaleWidth(35)};
 	justify-content: center;
 	align-items: center;
 	background-color: #33ace0;
@@ -119,6 +120,7 @@ const Email = styled.Text`
 	fontSize: ${scaleWidth(3.5)};
 	marginTop: ${scaleHeight(0.7)};
 `;
+
 const WrapInput = styled.View`
 	width: 100%;
 	height: ${scaleHeight(5)};
