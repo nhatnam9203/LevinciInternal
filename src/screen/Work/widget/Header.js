@@ -75,7 +75,7 @@ export default class Header extends Component {
 				</Row>
 
 				<TouchSetting onPress={this.navigateToSetting} hitSlop={{ top: 20, right: 20, left: 20, bottom: 20 }}>
-					<IonicIcon name={'ios-settings'} color="white" size={scaleWidth(4.5)} />
+					<IonicIcon name={'ios-settings'} color="white" size={scaleWidth(6)} />
 				</TouchSetting>
 
 				{isOpenCalendar && this.renderCalendar()}
@@ -87,7 +87,7 @@ export default class Header extends Component {
 const styles = StyleSheet.create({
 	calendar: {
 		position: 'absolute',
-		top: scaleHeight(13),
+		top: scaleHeight(14),
 		width: scaleWidth(100),
 		shadowColor: '#000',
 		shadowOffset: {
@@ -117,7 +117,7 @@ const theme = {
 		monthText: {
 			color: '#fff',
 			fontWeight: '700',
-			fontSize: 16
+			fontSize: scaleWidth(3.5)
 		},
 		dayHeader: {
 			marginTop: 2,
@@ -144,7 +144,7 @@ const Container = styled.View`
 	justify-content: space-between;
 	height: ${scaleHeight(12)};
 	width: ${scaleWidth(100)};
-	padding-top: ${scaleHeight(7)};
+	padding-top: ${scaleHeight(6)};
 	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 	zIndex: 9999;
 	backgroundColor: #2b2e33;

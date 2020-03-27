@@ -9,6 +9,9 @@ import TaskAdd from './TaskAdd';
 import Account from './Account';
 import Mail from './Mail';
 import ProjectDetail from './ProjectDetail';
+import TaskDetail from './TaskDetail'
+import Statistic from './Statistic'
+import Notification from './Notification'
 
 module.exports = {
 	Auth,
@@ -21,5 +24,8 @@ module.exports = {
 	TaskAdd,
 	Account,
 	Mail,
-	ProjectDetail
+	ProjectDetail,
+	TaskDetail,
+	Statistic,
+	Notification
 };

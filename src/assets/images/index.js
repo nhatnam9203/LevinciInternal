@@ -27,6 +27,9 @@ import Camera from './camera.png';
 import TreeDot from './treedot.png';
 import TrashAll from './trashall.png';
 import DefaultAvatar from './default-avatar.png';
+import Fly from './fly.png'
+import ArrowLeft from './arrowleft.png'
+import Clock from './clock.png'
 
 module.exports = {
 	BackgroundAuth,
@@ -57,5 +60,8 @@ module.exports = {
 	Media,
 	TreeDot,
 	TrashAll,
-	DefaultAvatar
+	DefaultAvatar,
+	Fly,
+	ArrowLeft,
+	Clock
 };

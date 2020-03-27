@@ -155,7 +155,7 @@ const Title = styled.Text`
 `;
 const Body = styled.View`
 	padding: 15px;
-	paddingTop: 0px;
+	paddingTop: ${scaleHeight(1)}px;
 `;
 
 const Done = styled(Title)`

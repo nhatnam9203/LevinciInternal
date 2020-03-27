@@ -181,7 +181,7 @@ const styles = StyleSheet.create({
 	pieChart: {
 		marginTop: scaleHeight(5),
 		backgroundColor: '#2B2E33',
-		borderRadius: 140,
+		borderRadius: scaleWidth(40),
 		width: scaleWidth(62),
 		padding: 15,
 		shadowColor: '#000',
@@ -191,7 +191,6 @@ const styles = StyleSheet.create({
 		},
 		shadowOpacity: 0.27,
 		shadowRadius: 4.65,
-		elevation: 6,
 		alignSelf: 'center',
 		position: 'relative',
 		justifyContent: 'center',
@@ -231,13 +230,13 @@ const Container = styled.View`
 
 const Time = styled.TouchableOpacity`
 	width: 100%;
-	borderRadius: 20px;
+	borderRadius: ${scaleWidth(5)}px;
 	backgroundColor: #1f2023;
 	marginTop: ${scaleHeight(2)};
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
-	padding: 10px 20px;
+	padding: ${scaleWidth(2)}px ${scaleWidth(2.5)}px;
 `;
 
 const RowBetween = styled.View`

@@ -28,7 +28,7 @@ class Home extends Component {
 		const { date, isOpenCalendar } = this.state;
 		return (
 			<React.Fragment>
-				<StatusBar hidden={true} />
+				<StatusBar backgroundColor="#2B2E33" />
 				<Container>
 					<Header
 						isOpenCalendar={isOpenCalendar}

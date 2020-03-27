@@ -88,6 +88,7 @@ const Note = styled.Text`
 	width: ${scaleWidth(80)};
 	margin-top: ${scaleWidth(7)};
 	margin-bottom: ${scaleWidth(7)};
+	fontSize: ${scaleWidth(3.5)}px;
 `;
 
 const LogoLevinci = styled.Image`width: ${scaleWidth(30)};`;

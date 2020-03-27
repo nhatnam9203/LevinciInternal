@@ -57,6 +57,7 @@ const InputText = styled.TextInput`
 	padding: 10px;
 	marginTop: ${scaleWidth(4)};
 	border: 1px solid #EBB028;
-	borderRadius: 20;
+	borderRadius: ${scaleWidth(5)};
+	fontSize: ${scaleWidth(3.5)};
     color: white;
 `;

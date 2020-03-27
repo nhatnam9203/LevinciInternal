@@ -286,6 +286,7 @@ const ItemSearch = styled.TouchableOpacity`
 	marginLeft: ${scaleWidth(3)};
 	marginTop: ${scaleWidth(2)};
 	padding: 5px 13px 5px 13px;
+	align-items: center;
 `;
 
 ItemSearch.Text = styled.Text`

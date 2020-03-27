@@ -41,7 +41,6 @@ export default class ScheduleNotification extends Component {
 		const { isTheseHour } = this.state;
 		return (
 			<Row style={styles.row}>
-
 				<TouchableOpacity hitSlop={slop} style={styles.checkBox} onPress={this.setTheseHour}>
 					{!isTheseHour && <Feather name="square" color={'#ffffff'} size={scaleWidth(5)} />}
 					{isTheseHour && <AntDesign name="checksquare" color={GlobalStyle.YELLOW} size={scaleWidth(5)} />}
@@ -79,7 +78,6 @@ export default class ScheduleNotification extends Component {
 		return (
 			<Modal visible={isVisible} onRequestClose={() => {}}>
 				<Container>
-
 					<Header>
 						<Row>
 							<TouchableOpacity hitSlop={slop} onPress={this.closeSchedule}>
@@ -102,7 +100,6 @@ export default class ScheduleNotification extends Component {
 						</Row>
 						{this.renderDuringTheseHour()}
 					</Body>
-					
 				</Container>
 			</Modal>
 		);

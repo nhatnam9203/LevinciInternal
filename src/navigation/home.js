@@ -1,5 +1,5 @@
 import { createMaterialTopTabNavigator } from 'react-navigation-tabs';
-import { Setting, Task, Account, Work, Mail, ProjectDetail } from '../screen';
+import { Setting, Task, Account, Work, Mail, ProjectDetail,Statistic } from '../screen';
 import TabBottom from '../component/TabBottom';
 
 const Tab = createMaterialTopTabNavigator(
@@ -9,12 +9,14 @@ const Tab = createMaterialTopTabNavigator(
 		Task,
 		Account,
 		Mail,
-		ProjectDetail
+		ProjectDetail,
+		Statistic
 	},
 	{
 		tabBarPosition: 'bottom',
 		tabBarComponent: TabBottom,
-		initialRouteName: 'Work'
+		initialRouteName: 'Work',
+		swipeEnabled : false
 	}
 );
 export default Tab;

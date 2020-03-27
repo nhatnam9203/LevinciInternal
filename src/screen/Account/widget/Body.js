@@ -25,7 +25,7 @@ export default class Body extends Component {
 
 					<Bottom>
 						<Row>
-							<Profile> Profile </Profile>
+							<Text style={styles.profile}>Profile</Text>
 							<TouchableOpacity>
 								<MaterialIcons name="edit" color={GlobalStyle.YELLOW} size={scaleWidth(5)} />
 							</TouchableOpacity>
@@ -37,6 +37,7 @@ export default class Body extends Component {
 						<InputItem title="Title" value="Coolier" />
 						<InputItem title="PTO days" value="-0.6" />
 						<InputItem title="Month efficient" value="93%" />
+
 						<ViewPassword>
 							<Security>Security</Security>
 							<Security.Text>Change password</Security.Text>
@@ -73,6 +74,11 @@ const styles = StyleSheet.create({
 		color: '#ffffff',
 		fontWeight: '500',
 		fontSize: scaleWidth(4)
+	},
+	profile : {
+		fontWeight : 'bold',
+		fontSize : scaleWidth(4.5),
+		color : 'white'
 	}
 });
 
@@ -80,7 +86,6 @@ const Container = styled.View`flex: 1;`;
 
 const Top = styled.View`
 	width: ${scaleWidth(100)};
-	/* height: ${scaleHeight(35)}; */
     align-items: center;
     padding: 15px;
     borderBottomWidth: 0.5px;
@@ -125,7 +130,7 @@ const WrapInput = styled.View`
 	width: 100%;
 	height: ${scaleHeight(5)};
 	justify-content: space-between;
-	marginTop: ${scaleHeight(2)};
+	marginTop: ${scaleHeight(4)};
 `;
 
 const Input = styled.TextInput`
@@ -140,14 +145,8 @@ const Row = styled.View`
 	marginTop: ${scaleHeight(1.5)};
 `;
 
-const Profile = styled.Text`
-	font-weight: bold;
-	fontSize: ${scaleWidth(4.5)};
-	color: white;
-`;
-
 const ViewPassword = styled.View`
-	margin-top: ${scaleHeight(2)};
+	margin-top: ${scaleHeight(4)};
 	margin-bottom: ${scaleHeight(2)};
 	padding-top: ${scaleHeight(2)};
 	padding-bottom: ${scaleHeight(2)};
@@ -168,4 +167,4 @@ Security.Text = styled(Security)`
     fontWeight: 500;
     fontSize: ${scaleWidth(3.5)};
 `;
-const Logout = styled(Security)``;
+

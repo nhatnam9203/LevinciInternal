@@ -43,7 +43,8 @@ const InputText = styled.TextInput`
 	padding: 10px;
 	margin-top: ${scaleWidth(4)};
 	border: 1px solid #dddddd;
-	border-radius: 5;
+	border-radius: ${scaleWidth(2)};
+	fontSize: ${scaleWidth(4)};
 `;
 
 const WrapInput = styled.View`

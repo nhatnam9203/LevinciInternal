@@ -1,16 +1,9 @@
 import React, { Component } from 'react';
-import { Text, View, ScrollView } from 'react-native';
+import { ScrollView } from 'react-native';
 import styled from 'styled-components/native';
-import { RowBetween } from '@component';
 import General from './General';
 import Advanced from './Advanced';
 import ScheduleNotification from './ScheduleNotification';
-
-const Container = styled.View`
-	padding: 15px;
-	backgroundColor: #2b2e33;
-	flex: 1;
-`;
 
 export default class Body extends Component {
 	constructor(props) {
@@ -38,3 +31,9 @@ export default class Body extends Component {
 		);
 	}
 }
+
+const Container = styled.View`
+	padding: 15px;
+	backgroundColor: #2b2e33;
+	flex: 1;
+`;

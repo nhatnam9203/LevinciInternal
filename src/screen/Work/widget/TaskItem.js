@@ -59,10 +59,10 @@ const styles = StyleSheet.create({
 		width: scaleWidth(94),
 		marginLeft: scaleWidth(3)
 	},
-	txtTime : {
-		fontWeight : '400',
-		color : 'white',
-		fontSize : scaleWidth(3)
+	txtTime: {
+		fontWeight: '400',
+		color: 'white',
+		fontSize: scaleWidth(3)
 	}
 });
 
@@ -70,26 +70,33 @@ const Item = styled.View`
 	/* border: 1px solid black; */
 	border-radius: 5;
 	margin-top: ${scaleWidth(2)};
-	box-shadow: 0 20px 50px rgba(0, 0, 0, 1);
+	box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
 `;
 
 Item.Header = styled.View`
 	justify-content: space-between;
 	align-items: center;
 	flex-direction: row;
-	padding: 10px;
+	padding: ${scaleWidth(1.2)}px;
 	border-bottom-width: 1px;
 	border-bottom-color: #1f2124;
 `;
 
-Item.Body = styled.View`flex-direction: row;`;
+Item.Body = styled.View`
+	flex-direction: row;
+	padding: ${scaleWidth(1)}px;
+	height: ${scaleWidth(17.5)};
+`;
 
-const Time = styled.Text`color: #929395;`;
+const Time = styled.Text`
+	color: #929395;
+	fontSize: ${scaleWidth(3.5)};
+`;
 
 const LogoTask = styled.View`
-	width: ${scaleWidth(12)};
-	height: ${scaleWidth(12)};
-	border-radius: 50;
+	width: ${scaleWidth(14)};
+	height: ${scaleWidth(14)};
+	border-radius: ${scaleWidth(10)};
 	justify-content: center;
 	align-items: center;
 	background-color: ${(props) => props.backgroundColor};
@@ -106,18 +113,17 @@ LogoTask.Text = styled.Text`
 const Name = styled.Text`
 	color: #dca626;
 	font-weight: 600;
+	fontSize: ${scaleWidth(4)};
 `;
 
 const TaskContent = styled.View`
 	justify-content: space-between;
 	margin-left: ${scaleWidth(2)};
-	border-right-width: 1;
-	border-right-color: #1f2124;
-	padding: 10px;
 `;
 TaskContent.Title = styled.Text`
 	color: white;
 	fontWeight: 600;
+	fontSize: ${scaleWidth(3.5)};
 `;
 
 TaskContent.Time = styled.View`flex-direction: row;`;
@@ -133,4 +139,8 @@ const TouchIcon = styled.TouchableOpacity`
 	align-self: center;
 	flex: 1;
 	align-items: center;
+	justify-content: center;
+	border-left-width: 1;
+	border-left-color: #1f2124;
+	height: ${scaleWidth(17.5)};
 `;

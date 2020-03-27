@@ -83,7 +83,7 @@ const Container = styled.View`
 
 const Header = styled.View`
 	padding: 15px;
-	borderBottomWidth: 0.5;
+	borderBottomWidth: 1px;
 	borderBottomColor: grey;
 `;
 const Title = styled.Text`
@@ -93,7 +93,7 @@ const Title = styled.Text`
 `;
 const Body = styled.View`
 	padding: 15px;
-	paddingTop: 0px;
+	paddingTop: ${scaleHeight(1)};
 `;
 
 const Done = styled(Title)`

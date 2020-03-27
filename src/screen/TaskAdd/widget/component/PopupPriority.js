@@ -118,7 +118,7 @@ const TouchDone = styled.TouchableOpacity`
 
 const Priority = styled.TouchableOpacity`
 	backgroundColor: ${(props) => props.Color};
-	padding: 10px;
+	padding: ${scaleWidth(3)}px;
 	borderRadius: 3px;
 	marginBottom: 5px;
 	position: relative;
@@ -127,4 +127,5 @@ const Priority = styled.TouchableOpacity`
 const TextPriority = styled.Text`
 	color: white;
 	fontWeight: 600;
+	fontSize: ${scaleWidth(3.5)}
 `;

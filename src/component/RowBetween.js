@@ -3,7 +3,20 @@ import { Text, View, StyleSheet } from 'react-native';
 
 export default class RowBetween extends Component {
 	render() {
-		return <View style={[ styles.row, this.props.style ]}>{this.props.children}</View>;
+		const { alignCenter } = this.props;
+		return (
+			<View
+				style={[
+					styles.row,
+					this.props.style,
+					{
+						alignItems: alignCenter ? 'center' : 'baseline'
+					}
+				]}
+			>
+				{this.props.children}
+			</View>
+		);
 	}
 }
 

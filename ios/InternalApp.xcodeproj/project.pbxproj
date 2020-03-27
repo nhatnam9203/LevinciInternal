@@ -17,6 +17,7 @@
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* InternalAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* InternalAppTests.m */; };
 		2F187D66DC1531CC6BAD7404 /* libPods-InternalApp-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 36331C4B7B0282350C4F4987 /* libPods-InternalApp-tvOS.a */; };
+		3D4018A2241A41FA00B24605 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D4018A1241A41FA00B24605 /* SplashScreen.storyboard */; };
 		B578982AC336FDB69E5B7773 /* libPods-InternalAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE5296D0FA0E77728157E5A5 /* libPods-InternalAppTests.a */; };
 		E1F3E42DD59DE061468503E6 /* libPods-InternalApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DE99BE94F16FA7063210766 /* libPods-InternalApp.a */; };
 		F41DBE370AE4CA9D0DAD6244 /* libPods-InternalApp-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 17C1401CAF650B4AAB23C8A2 /* libPods-InternalApp-tvOSTests.a */; };
@@ -56,6 +57,7 @@
 		2D02E47B1E0B4A5D006451C7 /* InternalApp-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "InternalApp-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* InternalApp-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "InternalApp-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		36331C4B7B0282350C4F4987 /* libPods-InternalApp-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-InternalApp-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D4018A1241A41FA00B24605 /* SplashScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashScreen.storyboard; sourceTree = "<group>"; };
 		3D6B1009212D291B0FB33D59 /* Pods-InternalApp-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InternalApp-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-InternalApp-tvOSTests/Pods-InternalApp-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		4DE99BE94F16FA7063210766 /* libPods-InternalApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-InternalApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6174D244F07E87D6FB045370 /* Pods-InternalAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InternalAppTests.release.xcconfig"; path = "Target Support Files/Pods-InternalAppTests/Pods-InternalAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
+				3D4018A1241A41FA00B24605 /* SplashScreen.storyboard */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
@@ -161,7 +164,6 @@
 				62AB949ED25F203B37B91C31 /* Pods-InternalAppTests.debug.xcconfig */,
 				6174D244F07E87D6FB045370 /* Pods-InternalAppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -293,6 +295,9 @@
 						CreatedOnToolsVersion = 6.2;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
+					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = AP95TBLGP3;
+					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
@@ -309,6 +314,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -338,6 +344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				3D4018A2241A41FA00B24605 /* SplashScreen.storyboard in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -677,6 +684,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = AP95TBLGP3;
 				INFOPLIST_FILE = InternalApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -696,6 +704,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AP95TBLGP3;
 				INFOPLIST_FILE = InternalApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (

@@ -5,7 +5,6 @@ import { scaleWidth, scaleHeight } from '@utils';
 
 export default class Select extends PureComponent {
 	render() {
-		const { name, title } = this.props;
 		return (
 			<React.Fragment>
 				<Title>Description</Title>

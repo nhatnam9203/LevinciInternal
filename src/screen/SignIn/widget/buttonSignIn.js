@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
 		padding: 10,
 		alignItems: 'center',
 		justifyContent: 'center',
-		borderRadius: 30,
+		borderRadius: scaleWidth(5),
 		marginTop: scaleWidth(4),
 	},
 	text: {

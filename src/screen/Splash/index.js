@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { Text, View, ImageBackground, ActivityIndicator } from 'react-native';
+import SplashScreen from 'react-native-splash-screen'
 
 export default class Splash extends Component {
 	componentDidMount() {
+		SplashScreen.hide();
         this.checkFlow();
     }
 

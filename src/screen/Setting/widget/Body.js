@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 import styled from 'styled-components/native';
 import { scaleWidth } from '@utils';
 import NavigationServices from '@navigator/NavigationServices';
@@ -9,28 +9,36 @@ export default class Body extends Component {
 		NavigationServices.navigate('Auth');
 	};
 
+	navigateToNotification = () => {
+		NavigationServices.navigate('Notification');
+	};
+
 	render() {
 		return (
 			<Container>
-				<Item isBottom>
-					<Text style={styles.title}>Notifications</Text>
-					<Text style={styles.content}>Open System Settings</Text>
-				</Item>
-				<Item isBottom>
-					<Text style={styles.title}>Language</Text>
-					<Text style={styles.content}>English</Text>
-				</Item>
-				<Item isBottom>
-					<Text style={styles.title}>Notifications</Text>
-					<Text style={styles.content}>End user agreement</Text>
-					<Text style={styles.content}>Privacy Policy</Text>
-				</Item>
-				<Item>
-					<Text style={styles.title}>Account</Text>
-					<TouchableOpacity onPress={this.logout}>
-						<Text style={styles.content}>Logout</Text>
-					</TouchableOpacity>
-				</Item>
+				<ScrollView showsVerticalScrollIndicator={false}>
+					<Item isBottom>
+						<Text style={styles.title}>Notifications</Text>
+						<TouchableOpacity onPress={this.navigateToNotification}>
+							<Text style={styles.content}>Open System Settings</Text>
+						</TouchableOpacity>
+					</Item>
+					<Item isBottom>
+						<Text style={styles.title}>Language</Text>
+						<Text style={styles.content}>English</Text>
+					</Item>
+					<Item isBottom>
+						<Text style={styles.title}>Notifications</Text>
+						<Text style={styles.content}>End user agreement</Text>
+						<Text style={styles.content}>Privacy Policy</Text>
+					</Item>
+					<Item>
+						<Text style={styles.title}>Account</Text>
+						<TouchableOpacity onPress={this.logout}>
+							<Text style={styles.content}>Logout</Text>
+						</TouchableOpacity>
+					</Item>
+				</ScrollView>
 			</Container>
 		);
 	}
